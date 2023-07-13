@@ -7,11 +7,11 @@ v_data_source = dbutils.widgets.get("p_data_source")
 
 # COMMAND ----------
 
-# MAGIC %run "./includes/configuration"
+# MAGIC %run "./../../includes/configuration"
 
 # COMMAND ----------
 
-# MAGIC %run "./includes/common_functions"
+# MAGIC %run "./../../includes/common_functions"
 
 # COMMAND ----------
 
