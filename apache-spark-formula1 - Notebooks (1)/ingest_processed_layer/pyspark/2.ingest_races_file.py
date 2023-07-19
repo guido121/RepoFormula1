@@ -93,7 +93,16 @@ races_selected_df = races_with_timestamp_df.select(col('raceId').alias('race_id'
 
 # COMMAND ----------
 
-races_selected_df.write.mode('overwrite').partitionBy('race_year').format("parquet").saveAsTable("f1_processed.races")
+files_in_mount = dbutils.fs.ls(f"{processed_folder_path}/races")
+if files_in_mount:
+    # Delete the files and directories inside the mount point
+    for file_info in files_in_mount:
+        dbutils.fs.rm(file_info.path, True)
+        #print(file_info.path)
+
+# COMMAND ----------
+
+races_selected_df.write.mode('overwrite').partitionBy("race_year").format("parquet").saveAsTable("f1_processed.races")
 
 # COMMAND ----------
 

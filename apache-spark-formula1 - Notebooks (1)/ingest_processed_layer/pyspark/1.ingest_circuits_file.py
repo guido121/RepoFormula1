@@ -3,12 +3,12 @@
 
 # COMMAND ----------
 
-#dbutils.widgets.text("p_data_source","")
+dbutils.widgets.text("p_data_source","")
 v_data_source = dbutils.widgets.get("p_data_source")
 
 # COMMAND ----------
 
-#dbutils.widgets.text("p_file_date","2021-03-21")
+dbutils.widgets.text("p_file_date","2021-03-21")
 v_file_date = dbutils.widgets.get("p_file_date")
 
 # COMMAND ----------
@@ -108,7 +108,9 @@ circuits_final_df.write.mode("overwrite").format("parquet").saveAsTable("f1_proc
 # COMMAND ----------
 
 # MAGIC %sql 
-# MAGIC SELECT * FROM f1_processed.circuits
+# MAGIC --SELECT * FROM f1_processed.circuits;
+# MAGIC describe formatted f1_processed.circuits;
+# MAGIC --DESC DETAIL f1_processed.circuits;
 
 # COMMAND ----------
 
