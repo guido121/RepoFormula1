@@ -16,7 +16,7 @@ def mount_container(storage_account,container):
 
 # COMMAND ----------
 
-mount_container("sa70903775","raw")
+mount_container("sa70903775","demo")
 
 # COMMAND ----------
 

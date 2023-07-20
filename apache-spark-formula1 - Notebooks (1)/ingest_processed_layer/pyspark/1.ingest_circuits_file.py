@@ -115,3 +115,7 @@ circuits_final_df.write.mode("overwrite").format("parquet").saveAsTable("f1_proc
 # COMMAND ----------
 
 dbutils.notebook.exit("Success")
+
+# COMMAND ----------
+
+display(spark.read.parquet("/mnt/sa70903775/processed/circuits"))
